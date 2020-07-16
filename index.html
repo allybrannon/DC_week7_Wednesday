@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Look! A website!</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <h1>Hello World! YAY!!</h1>
+    <div>The time is:<span id="time"></span></div>
+  </body>
+  <script>
+    // ${["I", "AM", "AWESOME"].map((text) => text).join(" ")}
+    let element = document.getElementById("time");
+    element.innerHTML = new Date().toTimeString();
+    setInterval(() => {
+      element.innerHTML = new Date().toTimeString();
+    }, 1000);
+
+    fetch("http://localhost:3000/api")
+      .then((resp) => resp.json())
+      .then((json) => console.log(json));
+  </script>
+</html>
